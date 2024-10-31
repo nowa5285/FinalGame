@@ -27,3 +27,8 @@ In **Through the Looking Glass**, you play as a character navigating parallel wo
 
 ## Summary
 "Through the Looking Glass" combines puzzle-platforming and strategic world-switching with a narrative about memory and identity. The mechanics and contrasting art styles create a deeply immersive experience where each world holds secrets and challenges unique to its theme.
+
+Links to recources for inspo 
+https://store.steampowered.com/app/275390/Guacamelee_Super_Turbo_Championship_Edition/
+https://www.google.com/search?q=outland+the+game+trailer&sca_esv=811d106c3f469370&sxsrf=ADLYWIJA7WcfluLiQwDBl1txq7A3Qqoabg%3A1730406691310&ei=I-kjZ97YEsef0PEP7dCE2A8&ved=0ahUKEwie9puhu7mJAxXHDzQIHW0oAfsQ4dUDCBA&uact=5&oq=outland+the+game+trailer&gs_lp=Egxnd3Mtd2l6LXNlcnAiGG91dGxhbmQgdGhlIGdhbWUgdHJhaWxlcjIFECEYoAEyBRAhGKsCMgUQIRifBUiQEVDMBViyEHABeAGQAQCYAW-gAZ8FqgEDNi4xuAEDyAEA-AEBmAIIoAK2BcICChAAGLADGNYEGEfCAgYQABgWGB7CAggQABgWGB4YD5gDAIgGAZAGCJIHAzYuMqAHiSk&sclient=gws-wiz-serp#fpstate=ive&vld=cid:38aa16eb,vid:LSJ4vL5GhlE,st:0
+
