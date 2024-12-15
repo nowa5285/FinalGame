@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c62altbugn7jo"]
+
+[ext_resource type="Shader" path="res://Tests/shaders_test.gdshader" id="1_4rkjq"]
+[ext_resource type="Texture2D" uid="uid://cx0hq2gajmdo" path="res://Assets/test_image.jpeg" id="2_hj1dj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tmucs"]
+shader = ExtResource("1_4rkjq")
+shader_parameter/scale = 1.0
+shader_parameter/mod_color = null
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tmucs")
+position = Vector2(421, 202)
+scale = Vector2(1.56245, 1.96599)
+texture = ExtResource("2_hj1dj")

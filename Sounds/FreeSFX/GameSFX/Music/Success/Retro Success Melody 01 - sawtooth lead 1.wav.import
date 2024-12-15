@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rpok5txxqwjh"
+path="res://.godot/imported/Retro Success Melody 01 - sawtooth lead 1.wav-fad7c4d9ccd31bbe4138d40df51b736b.sample"
+
+[deps]
+
+source_file="res://Sounds/FreeSFX/GameSFX/Music/Success/Retro Success Melody 01 - sawtooth lead 1.wav"
+dest_files=["res://.godot/imported/Retro Success Melody 01 - sawtooth lead 1.wav-fad7c4d9ccd31bbe4138d40df51b736b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

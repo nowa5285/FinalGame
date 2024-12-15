@@ -1,0 +1,100 @@
+[gd_scene load_steps=18 format=3 uid="uid://cu4gnf1nsu0sb"]
+
+[ext_resource type="Script" path="res://Actors/Interactables/Projectiles/fireball.gd" id="1_kvbr8"]
+[ext_resource type="Texture2D" uid="uid://cobumqoq84abv" path="res://Assets/bird flaying/1.png" id="2_jn148"]
+[ext_resource type="Texture2D" uid="uid://cc0ib2jpqy0vj" path="res://Assets/bird flaying/2.png" id="3_xj6cm"]
+[ext_resource type="Texture2D" uid="uid://teiqviqtgcft" path="res://Assets/bird flaying/3.png" id="4_kxy2h"]
+[ext_resource type="Texture2D" uid="uid://ce3c0ger6ffls" path="res://Assets/bird flaying/4.png" id="5_ouore"]
+[ext_resource type="Texture2D" uid="uid://c5ryaklbvngbt" path="res://Assets/bird flaying/5.png" id="6_627ku"]
+[ext_resource type="Texture2D" uid="uid://yn4dbk2rak83" path="res://Assets/bird flaying/6.png" id="7_frl7h"]
+[ext_resource type="Texture2D" uid="uid://pyn1uu6h4re0" path="res://Assets/bird flaying/7.png" id="8_w7mk0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aga2v"]
+atlas = ExtResource("2_jn148")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcltx"]
+atlas = ExtResource("3_xj6cm")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drg8d"]
+atlas = ExtResource("4_kxy2h")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ten56"]
+atlas = ExtResource("5_ouore")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd5r0"]
+atlas = ExtResource("6_627ku")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxhjd"]
+atlas = ExtResource("7_frl7h")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sigyo"]
+atlas = ExtResource("8_w7mk0")
+region = Rect2(0, 0, 68, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbgvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aga2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcltx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drg8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ten56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd5r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxhjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sigyo")
+}],
+"loop": true,
+"name": &"ball of fire",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qq576"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = -1.56562
+collision_layer = 8
+script = ExtResource("1_kvbr8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2.98443, 3.01549)
+rotation = 1.58024
+scale = Vector2(-0.634366, 0.576503)
+sprite_frames = SubResource("SpriteFrames_vbgvr")
+animation = &"ball of fire"
+autoplay = "ball of fire"
+frame_progress = 0.873422
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+scale = Vector2(0.363772, 0.8965)
+shape = SubResource("RectangleShape2D_qq576")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="pd" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="pd" to="." method="_on_pd_timeout"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm1qjgsgbfpag"]
+
+[ext_resource type="Texture2D" uid="uid://c0trcj1a0up6w" path="res://Assets/openart-image_7qIGdezk_1734297390242_raw.jpg" id="1_4cpj3"]
+[ext_resource type="Script" path="res://Levels/victory_royal.gd" id="1_i0pwc"]
+[ext_resource type="FontFile" uid="uid://b05taom7c4h1r" path="res://Assets/fonts/magic-school/MagicSchoolOne.ttf" id="2_uo03l"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_i0pwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(562, 318)
+scale = Vector2(1.16393, 0.694165)
+texture = ExtResource("1_4cpj3")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 0.266667, 0.156863, 1)
+offset_left = 310.0
+offset_top = 38.0
+offset_right = 450.0
+offset_bottom = 113.0
+scale = Vector2(3.95282, 5.79334)
+theme_override_fonts/font = ExtResource("2_uo03l")
+theme_override_font_sizes/font_size = 50
+text = "Victory!!!"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Restart" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 452.0
+offset_right = 575.0
+offset_bottom = 483.0
+scale = Vector2(1.68505, 1.93532)
+text = "Restart"
+
+[connection signal="pressed" from="Control/Restart" to="." method="_on_restart_pressed"]

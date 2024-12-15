@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb7es3depqcqk"]
+
+[ext_resource type="PackedScene" uid="uid://d0tid1lere5ii" path="res://Actors/Interactables/Projectiles/mp.tscn" id="1_n5ujq"]
+[ext_resource type="Script" path="res://Actors/Interactables/Projectiles/magic.gd" id="1_q137b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5368"]
+
+[node name="magic" type="Area2D" groups=["projectiles"]]
+scale = Vector2(0.964695, 0.290814)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_q137b")
+
+[node name="Mp" parent="." instance=ExtResource("1_n5ujq")]
+scale = Vector2(0.294211, 0.254369)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.3894, 3.81696)
+shape = SubResource("CircleShape2D_x5368")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="recharge" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="recharge" to="." method="_on_recharge_timeout"]

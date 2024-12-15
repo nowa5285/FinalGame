@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://3t3s3ul0c5gy"]
+
+[ext_resource type="Texture2D" uid="uid://bxr380dimi8gk" path="res://Assets/32x32 Portal Asset Pack/Dimensional_Portal.png" id="1_hadlu"]
+[ext_resource type="Script" path="res://Actors/Interactables/levelStuff/portal_area.gd" id="2_lkmot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uixv6"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky3dr"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpfx7"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xu5k"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0lpy"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmfyo"]
+atlas = ExtResource("1_hadlu")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mu5u5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uixv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky3dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpfx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xu5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0lpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmfyo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tmda"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mu5u5")
+autoplay = "default"
+frame_progress = 0.308873
+
+[node name="PortalArea" type="Area2D" parent="."]
+position = Vector2(1, 0)
+collision_layer = 128
+script = ExtResource("2_lkmot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PortalArea"]
+scale = Vector2(0.773346, 1)
+shape = SubResource("CapsuleShape2D_6tmda")
+
+[connection signal="area_entered" from="PortalArea" to="PortalArea" method="_on_area_entered"]
+[connection signal="body_entered" from="PortalArea" to="PortalArea" method="_on_body_entered"]

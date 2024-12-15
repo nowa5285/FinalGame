@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd1pekhs1w448"]
+
+[ext_resource type="Script" path="res://SharedScripts/game_manager.gd" id="1_w3147"]
+[ext_resource type="AudioStream" uid="uid://wb1spdsuc3tm" path="res://Sounds/blockman-kevin-macleod-main-version-8001-01-58.mp3" id="2_eelrw"]
+[ext_resource type="FontFile" uid="uid://b05taom7c4h1r" path="res://Assets/fonts/magic-school/MagicSchoolOne.ttf" id="3_aks54"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_w3147")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_eelrw")
+volume_db = -4.0
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="scroll" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="vic" type="Label" parent="CanvasLayer"]
+offset_left = 508.0
+offset_top = 282.0
+offset_right = 548.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("3_aks54")
+theme_override_font_sizes/font_size = 20

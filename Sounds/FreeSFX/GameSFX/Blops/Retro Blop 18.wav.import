@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bn6sngqd6qp3y"
+path="res://.godot/imported/Retro Blop 18.wav-ba4c032f264d7d90c66c1a9fa170175c.sample"
+
+[deps]
+
+source_file="res://Sounds/FreeSFX/GameSFX/Blops/Retro Blop 18.wav"
+dest_files=["res://.godot/imported/Retro Blop 18.wav-ba4c032f264d7d90c66c1a9fa170175c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

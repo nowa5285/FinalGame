@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxs3hl34rtmkq"]
+
+[ext_resource type="Script" path="res://Actors/Interactables/levelStuff/victory.gd" id="1_di6xx"]
+[ext_resource type="Texture2D" uid="uid://cek4qpwwbrtpj" path="res://Assets/magic_book_nyknck/LS001.png" id="1_j7jnw"]
+[ext_resource type="Texture2D" uid="uid://cay2xe45cucjf" path="res://Assets/magic_book_nyknck/LS002.png" id="2_gfa08"]
+[ext_resource type="Texture2D" uid="uid://duo0y6on68icp" path="res://Assets/magic_book_nyknck/LS003.png" id="3_kqory"]
+[ext_resource type="Texture2D" uid="uid://ip8pngfswjm4" path="res://Assets/magic_book_nyknck/LS004.png" id="4_v0vie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2duur"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtm6n"]
+atlas = ExtResource("1_j7jnw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i750j"]
+atlas = ExtResource("2_gfa08")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql5k7"]
+atlas = ExtResource("3_kqory")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6a8c"]
+atlas = ExtResource("4_v0vie")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g261d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtm6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i750j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql5k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6a8c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(1.79001, 1.96417)
+collision_layer = 128
+collision_mask = 129
+script = ExtResource("1_di6xx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.558655, 0)
+scale = Vector2(1.15451, 0.894464)
+shape = SubResource("RectangleShape2D_2duur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g261d")
+autoplay = "default"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://dndcg7ince42q"]
+
+[ext_resource type="Texture2D" uid="uid://bnaqnmks0wamx" path="res://Assets/png/purple/loops/burning_loop_1.png" id="1_0hww2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6gmy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijii5"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6304u"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytucn"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhnly"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlatr"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwosl"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpy4u"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxi8w"]
+atlas = ExtResource("1_0hww2")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8glt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijii5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6304u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytucn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhnly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlatr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwosl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpy4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxi8w")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 5.0
+}]
+
+[node name="PlacableTile" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l6gmy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_m8glt")
+animation = &"burn"
+autoplay = "burn"
+frame_progress = 0.115079
